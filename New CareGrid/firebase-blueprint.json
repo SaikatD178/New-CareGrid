@@ -1,0 +1,100 @@
+{
+  "entities": {
+    "user": {
+      "title": "User",
+      "description": "Patient user profile",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "email": { "type": "string" },
+        "phone": { "type": "string" },
+        "dob": { "type": "string" },
+        "bloodGroup": { "type": "string" },
+        "gender": { "type": "string" },
+        "medicalHistory": { "type": "string" },
+        "emergencyContact": { "type": "string" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["id", "name", "email"]
+    },
+    "appointment": {
+      "title": "Appointment",
+      "description": "Healthcare booking",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "patientUserId": { "type": "string" },
+        "hospitalId": { "type": "string" },
+        "hospitalName": { "type": "string" },
+        "type": { "type": "string" },
+        "date": { "type": "string" },
+        "time": { "type": "string" },
+        "itemName": { "type": "string" },
+        "doctorId": { "type": "string" },
+        "doctorName": { "type": "string" },
+        "patientName": { "type": "string" },
+        "patientAge": { "type": "number" },
+        "patientGender": { "type": "string" },
+        "docSpecialty": { "type": "string" },
+        "notes": { "type": "string" },
+        "bedId": { "type": "string" },
+        "wardId": { "type": "string" },
+        "status": { "type": "string" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["id", "patientUserId", "hospitalId", "type", "date", "status"]
+    },
+    "reminder": {
+      "title": "MedicineReminder",
+      "description": "Patient medicine consumption reminder",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "userId": { "type": "string" },
+        "medicineName": { "type": "string" },
+        "dosage": { "type": "string" },
+        "timing": { "type": "string" },
+        "frequency": { "type": "string" },
+        "isActive": { "type": "boolean" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["id", "userId", "medicineName", "dosage", "timing", "frequency", "isActive", "createdAt"]
+    },
+    "booking_log": {
+      "title": "BookingLog",
+      "description": "Log of a healthcare booking",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "email": { "type": "string" },
+        "phone": { "type": "string" },
+        "age": { "type": "number" },
+        "gender": { "type": "string" },
+        "medicalHistory": { "type": "string" },
+        "createdAt": { "type": "string" },
+        "lastBookedDoctorOrScan": { "type": "string" },
+        "lastBookingReason": { "type": "string" }
+      },
+      "required": ["name", "email", "createdAt"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "user",
+      "description": "User profiles"
+    },
+    "/appointments/{appointmentId}": {
+      "schema": "appointment",
+      "description": "Appointment bookings"
+    },
+    "/reminders/{reminderId}": {
+      "schema": "reminder",
+      "description": "Medicine reminders for patients"
+    },
+    "/booking_logs/{logId}": {
+      "schema": "booking_log",
+      "description": "Visitor booking audit logs"
+    }
+  }
+}

@@ -1,0 +1,9 @@
+@import "tailwindcss";
+
+@theme {
+  --color-manipal-blue: #003087;
+  --color-manipal-dark: #001f5c;
+  --color-manipal-red: #e31c3d;
+  --color-manipal-light-red: #fef2f2;
+  --color-manipal-hover-blue: #002566;
+}

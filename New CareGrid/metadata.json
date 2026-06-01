@@ -1,0 +1,6 @@
+{
+  "name": "CareGrid",
+  "description": "An integrated hospital locator, medical appointment booking, and real-time bed occupancy tracker with visual ward grids and admin CRUD controls.",
+  "requestFramePermissions": ["geolocation"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
